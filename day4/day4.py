@@ -1,25 +1,18 @@
-'''part 1
+#part 1
 count = 0
 expected_fields = {'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'}
 received_fields = set()
-
 with open("input.txt") as f:
     for line in f:
         if line != '\n':
             fields = {i[:3] for i in line.split(' ')}
             received_fields.update(fields)
         else:
-            print(received_fields, end=' ')
             difference = expected_fields - received_fields
-            print("Missing:", difference, end=' ')
             if not difference:
                 count += 1
-                print("valid")
-            else:
-                print()
-            received_fields.clear()
-            
-print(count)'''
+            received_fields.clear()            
+print(count)
 
 #part 2
 count = 0
